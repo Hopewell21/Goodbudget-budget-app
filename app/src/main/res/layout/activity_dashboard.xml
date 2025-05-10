@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:orientation="vertical" android:padding="16dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+
+            <TextView android:id="@+id/totalBalance" android:text="Total Balance: R0" android:textSize="20sp" android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+            <TextView android:id="@+id/spendingBalance" android:text="Spending: R0" android:textSize="18sp" android:layout_marginBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+            <TextView android:text="Category Breakdown:" android:textStyle="bold" android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/categoryList" android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+            <TextView android:text="Upcoming Bills:" android:textStyle="bold" android:layout_marginTop="16dp" android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/billsList" android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_nav_menu" />
+</RelativeLayout>
