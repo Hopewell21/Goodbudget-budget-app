@@ -1,8 +1,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:gravity="center"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="#FFFFFF" android:padding="24dp">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="24dp">
 
+    <ImageView
+        android:id="@+id/splashImage"
+        android:src="#"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="24dp" />
 
     <TextView
         android:id="@+id/splashTitle"
@@ -15,7 +24,7 @@
 
     <TextView
         android:id="@+id/splashDesc"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
+        android:text="Plan smart. Spend smarter."
         android:textAlignment="center"
         android:layout_marginTop="8dp"
         android:layout_width="match_parent"
