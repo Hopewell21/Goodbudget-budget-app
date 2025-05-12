@@ -6,7 +6,8 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.database.FirebaseDatabase
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -25,7 +26,6 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        // Bind inputs
         nameField = findViewById(R.id.nameLoginField)
         surnameField = findViewById(R.id.surnameLoginField)
         usernameField = findViewById(R.id.usernameLoginField)
@@ -62,14 +62,19 @@ class RegisterActivity : AppCompatActivity() {
                     password = pass
                 )
 
-                // Firebase save
-                val database = FirebaseDatabase.getInstance()
-                val usersRef = database.getReference("users")
-                val userId = usersRef.push().key ?: ""
-                usersRef.child(userId).setValue(user)
+                val db = AppDatabase.getDatabase(applicationContext)
+                val userDao = db.userDao()
 
-                Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, DashboardActivity::class.java))
+                lifecycleScope.launch {
+                    val existingUser = userDao.getUserByEmail(user.email)
+                    if (existingUser == null) {
+                        userDao.insertUser(user)
+                        Toast.makeText(this@RegisterActivity, "Registration Successful", Toast.LENGTH_SHORT).show()
+                        startActivity(Intent(this@RegisterActivity, DashboardActivity::class.java))
+                    } else {
+                        Toast.makeText(this@RegisterActivity, "Email already registered", Toast.LENGTH_SHORT).show()
+                    }
+                }
             } else {
                 Toast.makeText(this, "Password validation failed", Toast.LENGTH_SHORT).show()
             }

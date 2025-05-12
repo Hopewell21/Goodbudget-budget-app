@@ -5,11 +5,23 @@
     android:layout_height="match_parent"
     android:background="@android:color/white">
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:itemIconTint="#FFBB86FC"
+        app:itemTextColor="#FF000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
     <View
         android:id="@+id/headerBackground"
         android:layout_width="412dp"
         android:layout_height="163dp"
-        android:background="#"
+        android:background="#EEEEEE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,35 +40,30 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/trophyImageView"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="8dp"
-        android:src="#" app:layout_constraintStart_toStartOf="@+id/greetingTextView"
-        app:layout_constraintTop_toBottomOf="@+id/greetingTextView" />
+        android:id="@+id/imageView2"
+        android:layout_width="55dp"
+        android:layout_height="57dp"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="69dp" />
 
     <TextView
         android:id="@+id/achievementTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
         android:text="Under Budget, Over Achiever!"
         android:textColor="#FFB74D"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/trophyImageView"
-        app:layout_constraintStart_toEndOf="@+id/trophyImageView"
-        app:layout_constraintTop_toTopOf="@+id/trophyImageView"
-        app:layout_constraintVertical_bias="1.0" />
+        tools:layout_editor_absoluteX="97dp"
+        tools:layout_editor_absoluteY="89dp" />
 
     <TextView
         android:id="@+id/dateRangeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="01 MAR - 29 MAR"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/greetingTextView"
-        app:layout_constraintTop_toBottomOf="@+id/trophyImageView" />
+        tools:layout_editor_absoluteY="126dp" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/netWorthDebtCardView"
@@ -96,7 +103,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="R16,523.00"
-                    android:textColor="#"
+                    android:textColor="#FFB74D"
                     android:textSize="20sp" />
             </LinearLayout>
 
@@ -119,7 +126,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="R4,278.00"
-                    android:textColor="#"
+                    android:textColor="#FFB74D"
                     android:textSize="20sp" />
             </LinearLayout>
 
@@ -148,13 +155,19 @@
             <View
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:background="#" />
+                android:background="#EEEEEE" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rent"
                 android:textSize="12sp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
         <LinearLayout
@@ -167,7 +180,7 @@
             <View
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:background="#" />
+                android:background="#EEEEEE" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -186,7 +199,7 @@
             <View
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:background="#" />
+                android:background="#EEEEEE" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -205,7 +218,7 @@
             <View
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:background="#" />
+                android:background="#EEEEEE" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -252,7 +265,7 @@
                 <View
                     android:layout_width="16dp"
                     android:layout_height="16dp"
-                    android:background="#" />
+                    android:background="#EEEEEE" />
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -274,7 +287,7 @@
                 <View
                     android:layout_width="16dp"
                     android:layout_height="16dp"
-                    android:background="#" />
+                    android:background="#EEEEEE" />
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -296,7 +309,7 @@
                 <View
                     android:layout_width="16dp"
                     android:layout_height="16dp"
-                    android:background="#" />
+                    android:background="#EEEEEE" />
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -317,8 +330,9 @@
         android:id="@+id/bottomNavigationView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:menu="#" app:layout_constraintBottom_toBottomOf="parent"
+        app:menu= "@menu/bottom_nav_menu" app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
