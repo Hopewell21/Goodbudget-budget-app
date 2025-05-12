@@ -1,6 +1,6 @@
-# Expense Tracker Android
+# Goodbudget
 
-Welcome to the Expense Tracker Android app! This project is designed to help users keep track of their daily expenses with ease. The app allows users to add, view, and analyze their expenses using intuitive stats and charts. It is developed using modern Android development practices, including Jetpack Compose, Room Database, Dagger Hilt for dependency injection, and the MVVM architecture.
+Welcome to the GoodBudget Android app! This project is designed to help users keep track of their daily expenses with ease. The app allows users to add, view, and analyze their expenses using intuitive stats and charts. It is developed using modern Android development practices,.
 
 ## Features
 
@@ -17,11 +17,6 @@ Welcome to the Expense Tracker Android app! This project is designed to help use
 
 ## Getting Started
 
-### Prerequisites
-
-- Android Studio Bumblebee or later
-- Java 11 or later
-- Android SDK 21 or later
 
 ### Installation
 
