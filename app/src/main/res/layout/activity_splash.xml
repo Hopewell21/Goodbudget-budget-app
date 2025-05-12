@@ -1,41 +1,66 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:gravity="center"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:padding="24dp">
 
-    <ImageView
-        android:id="@+id/splashImage"
-        android:src="#"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginBottom="24dp" />
+    <!-- Top-left decorative circle -->
 
+    <!-- Piggy illustration -->
+
+    <ImageView
+        android:id="@+id/bgCircle"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-2dp"
+        android:layout_marginTop="-2dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/splash_image_1" />
+
+    <ImageView
+        android:id="@+id/piggyImage"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/splash_image_3"
+        android:contentDescription="Piggy Bank Illustration" />
+
+    <!-- Title -->
     <TextView
         android:id="@+id/splashTitle"
-        android:text="SAVING FOR YOUR FUTURE"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textAlignment="center"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="SAVING FOR YOUR FUTURE"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_below="@id/piggyImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
 
+    <!-- Description -->
     <TextView
         android:id="@+id/splashDesc"
-        android:text="Plan smart. Spend smarter."
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
         android:textAlignment="center"
-        android:layout_marginTop="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:gravity="center"
+        android:layout_below="@id/splashTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp" />
 
+    <!-- CTA Button -->
     <Button
         android:id="@+id/btnGetStarted"
-        android:text="Let's Get Started"
-        android:backgroundTint="#FFB74D"
-        android:textColor="#FFFFFF"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Let’s Get Started"
+        android:layout_below="@id/splashDesc"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-</LinearLayout>
+        android:backgroundTint="#FFB74D"
+        android:textColor="#FFFFFF"/>
+</RelativeLayout>
